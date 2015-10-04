@@ -19,6 +19,7 @@ object SimpleStreamClient extends App {
       Stream.continually(br.readLine())
         .takeWhile(_ != null)
         .foreach(s => println(s))
+      br.close()
     }
   } finally {
     httpClient.close()

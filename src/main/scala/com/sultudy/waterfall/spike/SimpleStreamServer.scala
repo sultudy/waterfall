@@ -1,9 +1,8 @@
 package com.sultudy.waterfall.spike
 
-import java.io.BufferedReader
 import java.net.InetSocketAddress
 
-import com.sun.net.httpserver.{HttpServer, HttpExchange, HttpHandler}
+import com.sun.net.httpserver.{HttpExchange, HttpHandler, HttpServer}
 
 import scala.io.Source
 
@@ -19,16 +18,16 @@ object SimpleStreamServer extends App {
 class RequestHandler extends HttpHandler {
 
   override def handle(httpExchange: HttpExchange) = {
-    val contents = Source.fromURL(getClass.getResource("/spike/messages.txt")).bufferedReader()
     // If the response length parameter is zero,
     // then chunked transfer encoding is used and an arbitrary amount of data may be sent.
     httpExchange.sendResponseHeaders(200, 0)
-    sendChunkedMessages(httpExchange, contents)
+    sendChunkedMessages(httpExchange)
   }
 
-  private def sendChunkedMessages(httpExchange: HttpExchange, contents: BufferedReader): Unit = {
+  private def sendChunkedMessages(httpExchange: HttpExchange): Unit = {
     val os = httpExchange.getResponseBody
-    Stream.continually(contents.readLine())
+    val br = Source.fromURL(getClass.getResource("/spike/messages.txt")).bufferedReader()
+    Stream.continually(br.readLine())
       .takeWhile(_ != null)
       .map(s => s + "\r\n")
       .foreach { line =>
@@ -37,6 +36,7 @@ class RequestHandler extends HttpHandler {
         // sleep short time for test
         Thread sleep 100
       }
+    br.close()
     os.close()
   }
 }
