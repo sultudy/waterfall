@@ -11,8 +11,11 @@ object SimpleStreamClient extends App {
 
   try {
     val httpGet = new HttpGet("http://localhost:8080/")
-    println("Executing request " + httpGet.getRequestLine)
+    println("Request-Line: " + httpGet.getRequestLine)
     val response = httpClient.execute(httpGet)
+    response.getAllHeaders.foreach {
+      h => println(h.getName + ": " + h.getValue)
+    }
     if (response.getStatusLine.getStatusCode == 200) {
       println("----------------------------------------")
       val br = Source.fromInputStream(response.getEntity.getContent).bufferedReader()
