@@ -15,6 +15,10 @@ class StreamServer extends Actor with ActorLogging {
         httpExchange.getRemoteAddress.getHostName, httpExchange.getRemoteAddress.getPort)
       httpExchange.sendResponseHeaders(200, 0)
       sendChunkedMessages(httpExchange)
+      self ! End
+    case End =>
+      log.info("received End message.")
+      context.stop(self)
   }
 
   private def sendChunkedMessages(httpExchange: HttpExchange): Unit = {
@@ -39,4 +43,5 @@ object StreamServer {
   def props = Props(classOf[StreamServer])
 
   case class Start(httpExchange: HttpExchange)
+  case object End
 }
