@@ -1,4 +1,4 @@
-package com.sultudy.waterfall.spike
+package com.sultudy.waterfall.spike.simple
 
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.impl.client.HttpClients
