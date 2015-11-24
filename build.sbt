@@ -6,3 +6,4 @@ scalaVersion := "2.11.7"
 
 libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.5.1"
 libraryDependencies += "io.netty" % "netty-all" % "4.0.32.Final"
+libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
