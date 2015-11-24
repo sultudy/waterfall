@@ -1,4 +1,4 @@
-package com.sultudy.waterfall.spike
+package com.sultudy.waterfall.spike.simple
 
 import java.net.InetSocketAddress
 
