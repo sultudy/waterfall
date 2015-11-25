@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="263.0" y="4.0">com.sultudy.waterfall.spike.basic.core.server.WaterfallServer</node>
+    <node x="57.0" y="86.0">com.sultudy.waterfall.spike.basic.impl.server.AsyncStreamServer</node>
+    <node x="454.0" y="332.0">com.sultudy.waterfall.spike.basic.impl.handler.ReadFileAndWriteHandler</node>
+    <node x="570.0" y="497.0">com.sultudy.waterfall.spike.basic.impl.socket.WaterfallNormalSocket</node>
+    <node x="145.25" y="248.0">com.sultudy.waterfall.spike.basic.core.handler.HttpHeaderHandler</node>
+    <node x="482.0" y="250.0">com.sultudy.waterfall.spike.basic.core.handler.HttpBodyHandler</node>
+    <node x="323.5" y="415.0">com.sultudy.waterfall.spike.basic.core.socket.WaterfallSocket</node>
+    <node x="244.0" y="497.0">com.sultudy.waterfall.spike.basic.impl.socket.WaterfallAsynchronousSocketChannel</node>
+    <node x="35.0" y="330.0">com.sultudy.waterfall.spike.basic.impl.handler.SocketHeaderHandler</node>
+    <node x="214.0" y="165.0">com.sultudy.waterfall.spike.basic.core.handler.WaterfallHandler</node>
+    <node x="244.0" y="330.0">com.sultudy.waterfall.spike.basic.impl.handler.NettyHeaderHandler</node>
+    <node x="407.0" y="166.0">com.sultudy.waterfall.spike.basic.core.handler.WaterfallThreadHandler</node>
+    <node x="439.0" y="86.0">com.sultudy.waterfall.spike.basic.impl.server.ThreadStreamServer</node>
+    <node x="-20.0" y="497.0">com.sultudy.waterfall.spike.basic.impl.socket.NettyChannelHandlerContext</node>
+    <node x="250.0" y="86.0">com.sultudy.waterfall.spike.basic.impl.server.NettyStreamServer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.handler.ReadFileAndWriteHandler" target="com.sultudy.waterfall.spike.basic.core.handler.HttpBodyHandler">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.server.ThreadStreamServer" target="com.sultudy.waterfall.spike.basic.core.server.WaterfallServer">
+      <point x="0.0" y="-16.0" />
+      <point x="528.5" y="61.0" />
+      <point x="382.16666666666663" y="61.0" />
+      <point x="47.66666666666663" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.handler.NettyHeaderHandler" target="com.sultudy.waterfall.spike.basic.core.handler.HttpHeaderHandler">
+      <point x="0.0" y="-16.0" />
+      <point x="334.0" y="305.0" />
+      <point x="275.0" y="305.0" />
+      <point x="43.25" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.socket.WaterfallNormalSocket" target="com.sultudy.waterfall.spike.basic.core.socket.WaterfallSocket">
+      <point x="0.0" y="-16.0" />
+      <point x="669.5" y="472.0" />
+      <point x="446.0" y="472.0" />
+      <point x="49.0" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.socket.WaterfallAsynchronousSocketChannel" target="com.sultudy.waterfall.spike.basic.core.socket.WaterfallSocket">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.server.AsyncStreamServer" target="com.sultudy.waterfall.spike.basic.core.server.WaterfallServer">
+      <point x="0.0" y="-16.0" />
+      <point x="143.5" y="61.0" />
+      <point x="286.8333333333333" y="61.0" />
+      <point x="-47.666666666666686" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.server.NettyStreamServer" target="com.sultudy.waterfall.spike.basic.core.server.WaterfallServer">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.handler.SocketHeaderHandler" target="com.sultudy.waterfall.spike.basic.core.handler.HttpHeaderHandler">
+      <point x="0.0" y="-16.0" />
+      <point x="129.5" y="305.0" />
+      <point x="188.5" y="305.0" />
+      <point x="-43.25" y="16.0" />
+    </edge>
+    <edge source="com.sultudy.waterfall.spike.basic.impl.socket.NettyChannelHandlerContext" target="com.sultudy.waterfall.spike.basic.core.socket.WaterfallSocket">
+      <point x="0.0" y="-16.0" />
+      <point x="102.0" y="472.0" />
+      <point x="348.0" y="472.0" />
+      <point x="-49.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="331.5" y="295.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
